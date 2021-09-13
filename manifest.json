@@ -1,0 +1,25 @@
+{
+  "manifest_version":2,
+  "name":"mouse event detection",
+  "version":"1.0.2",
+  "icons":{
+    "128":"mouse.png"
+  },
+  "content_scripts":[
+    {
+      "matches":["<all_urls>"],
+      "js":["content.js","jquery.js"]
+
+    }
+
+  ],
+  "browser_action":{
+    "default_icon":"mouse.png",
+    "default_title":"mouse event detector",
+    "default_popup":"popup.html"
+  },
+  "background":{
+    "scripts":["background.js"]
+  }
+
+}
