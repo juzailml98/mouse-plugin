@@ -1,12 +1,9 @@
 //for contact:juzailofficial@gmail.com
 //to be implemented
-///1.a modified score system for container
-////2.check whether the screen is minimized or not--pass
-/////3.implementing a container
-///4.the menifest should be changed to only run on edulab website
+///the menifest should be changed to only run on edulab website
 
 
-//this codeset work cohesively with the index.html file .user should implement the container div in ht e web index.html
+//this codeset work cohesively with the index.html file .user should implement the container div in the web index.html
 var score=0;
 ///the below eventlistener detects  mouse click in the webpage but it is not implemented in the plugin
 
@@ -21,7 +18,7 @@ var score=0;
 
 ///the below code snippet is used to check whether the user has changed the active tabs or minimized the screen
 //or if another computer app is opened in full screen
-///need to test whether this works with minimizing
+//eventlistener 1
 document.addEventListener("visibilitychange", function() {
   $(".action").text("you changed webpage");
   console.log("you changed webpage");
@@ -30,6 +27,7 @@ document.addEventListener("visibilitychange", function() {
 })
 
 ////the below eventlistener detects copying and pasting of users using keyboard(ctrl+c,ctrl+v,ctrl+x)
+//eventlistener 2
 document.addEventListener("keydown", function(event) {
 
   if (event.ctrlKey) {
@@ -63,6 +61,7 @@ document.addEventListener("keydown", function(event) {
 })
 
 ////the below codesnippet prevent the user from opening right click context menu for copying and pasting
+//eventlistener3
 document.addEventListener("contextmenu", function(event) {
   event.preventDefault();
   console.log("you attempted right click");
@@ -71,7 +70,8 @@ document.addEventListener("contextmenu", function(event) {
   console.log(score);
 })
 
-////the below container identifty whether user has gone out of the box or not
+////the below eventlistener identifty whether user has gone out of the box or not
+//eventlistener4
 document.querySelector(".container").addEventListener("mouseleave", function() {
   $(".action").text("you MOVED out of THE BOX");
   console.log("you moved out of the box");
@@ -79,6 +79,7 @@ document.querySelector(".container").addEventListener("mouseleave", function() {
   console.log(score);
 
 });
+//eventlistener5
 document.querySelector(".container").addEventListener("mouseenter", function() {
   $(".action").text("you MOVED into THE BOX");
   console.log("you moved into the box");
